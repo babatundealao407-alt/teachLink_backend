@@ -60,6 +60,8 @@ Entries are added newest-first. Format: date · version · summary · pull reque
 
 | Date       | Version | Change                                                                                                                                                                         | PR                |
 | ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- |
+| 2026-09-30 | 1.0.0   | Added `roles/RELEASE_MANAGER.md` — release duties, sign-off authority and its limits, and a per-release rotation (issue #1558).                                                | This pull request |
+| 2026-09-30 | 1.0.0   | Added `processes/ONBOARDING.md` — onboarding ownership, phased steps, and the resources a new contributor receives (issue #1565).                                              | This pull request |
 | 2026-09-28 | 1.0.0   | **Initial release.** Added `policies/COMMUNICATION_NORMS.md` and created the `Governance/` tree. Covers tone and etiquette, official channels, and response-time expectations. | This pull request |
 
 ### 2026-09-28 — v1.0.0 (initial)
@@ -163,6 +165,9 @@ Standalone policies live in `Governance/policies/`:
 
 - [Privilege Revocation Policy](policies/REVOCATION.md) — grounds for revoking
   privileges, who can initiate revocation, and the appeal path.
+- [Vendor Risk Policy](policies/VENDOR_RISK.md) — vetting criteria for external
+  vendors, risk tier classification (Critical / Significant / Standard), scheduled
+  review cadence, remediation levels, and the vendor register.
 - [Voting Quorum Policy](policies/QUORUM.md) — the quorum threshold for a
   formal vote, how quorum is measured, and what happens when it is not met.
 - [Supermajority Policy](policies/SUPERMAJORITY.md) — which decisions require
@@ -177,12 +182,33 @@ Standalone policies live in `Governance/policies/`:
   family's data comes from.
 - [Changelog Policy](policies/CHANGELOG_POLICY.md) — the required changelog
   format, change categories, and when entries are required.
+- [Code Review Policy](policies/REVIEW_POLICY.md) — the requirements that must be
+  met before a change is merged, what reviewers check, and the reviewer
+  independence rule.
+- [Deprecation Policy](policies/DEPRECATION.md) — the deprecation notice
+  period, communication channels, and removal criteria, with
+  [`domains/API_DEPRECATION.md`](domains/API_DEPRECATION.md) as the
+  authoritative policy for API surfaces.
+- [Backport Policy](policies/BACKPORT.md) — which release branches receive
+  backports, the eligibility criteria for backporting a fix, and the approval
+  and verification process a backport must pass.
+
+## Reporting
+
+Periodic reports live in `Governance/reporting/`:
+
+- [Security Posture Report](reporting/SECURITY_POSTURE_REPORT.md) — the
+  metrics disclosed in each security posture report, the publication cadence,
+  the audience, and the correction process.
 
 ## Processes
 
 Standalone process documents live in `Governance/processes/`:
 
 - [`processes/NOMINATION.md`](processes/NOMINATION.md) — role nomination process.
+- [`processes/ONBOARDING.md`](processes/ONBOARDING.md) — contributor onboarding
+  process: who owns onboarding, the phased onboarding steps, and the resources
+  provided to a new contributor.
 - [`processes/OFFBOARDING.md`](processes/OFFBOARDING.md) — contributor offboarding checklist and timeline.
 - [`processes/PROMOTION_CRITERIA.md`](processes/PROMOTION_CRITERIA.md) — objective promotion criteria per role.
 - [`processes/PROPOSAL_LIFECYCLE.md`](processes/PROPOSAL_LIFECYCLE.md) — stages from draft to decision, stage ownership, and exit criteria.
@@ -190,10 +216,28 @@ Standalone process documents live in `Governance/processes/`:
 - [`processes/ESCALATION_PATH.md`](processes/ESCALATION_PATH.md) — incident escalation tiers, role-based contacts, and response SLAs.
 - [`processes/WORKING_GROUP_DISSOLUTION.md`](processes/WORKING_GROUP_DISSOLUTION.md) — dissolution triggers, artifact handover, and archival steps for working groups.
 
+## Roles
+
+Role definitions live in `Governance/roles/`. They describe what a role is
+responsible for, not how to reach it — progression between the core community
+roles follows [`processes/PROMOTION_CRITERIA.md`](processes/PROMOTION_CRITERIA.md).
+
+- [`roles/CONTRIBUTOR.md`](roles/CONTRIBUTOR.md) — who a contributor is, the rights
+  the role grants, and how a person becomes one.
+- [`roles/MAINTAINER.md`](roles/MAINTAINER.md) — maintainer responsibilities,
+  review and merge authority, and accountability.
+- [`roles/TREASURER.md`](roles/TREASURER.md) — community treasury custody,
+  spending authority limits, and reporting obligations.
+- [`roles/RELEASE_MANAGER.md`](roles/RELEASE_MANAGER.md) — release duties, sign-off
+  authority and its limits, and the per-release rotation. A delegated functional
+  appointment held by a maintainer, sitting outside the promotion ladder; final
+  release authorization stays with the lead maintainer per
+  [`processes/RELEASE_SIGNOFF.md`](processes/RELEASE_SIGNOFF.md) §4.
+
 ## Templates
-
 Reusable templates live in `Governance/templates/`:
-
+- [`templates/RELEASE_CHECKLIST.md`](templates/RELEASE_CHECKLIST.md) — the
+  pre-release, approval, deployment, and post-release checklist.
 - [`templates/AGENDA_TEMPLATE.md`](templates/AGENDA_TEMPLATE.md) — the standard sections,
   time-boxing guidance, and submission process for a governance meeting agenda.
 - [`templates/MINUTES_TEMPLATE.md`](templates/MINUTES_TEMPLATE.md) — the structure used to
@@ -202,6 +246,8 @@ Reusable templates live in `Governance/templates/`:
   request for comments.
 - [`templates/ADR_TEMPLATE.md`](templates/ADR_TEMPLATE.md) — the starting point for an
   architecture decision record.
+- [`templates/WORKING_GROUP_CHARTER.md`](templates/WORKING_GROUP_CHARTER.md) — the starting point for a
+  working group charter.
 
 ## Recognition
 
